@@ -1,0 +1,59 @@
+insurance provider
+user
+doctor
+
+user select department of medicare and time then search
+insurance search within doctors
+doctors provide available slot
+
+==========================================================================================
+Class: Provider
+Data: doctors, plans, appointmentRequests, appointmentConfirmed
+Behavior:
+searchDoctor(discipline, date) {
+    List<Doctor> doctors;
+    for doctor in doctors:
+        if doctor.discipline == discipline && date.valid() {
+            System.out.println(doctor);
+        }
+}
+makeAppointment(doctorID, date) {
+    Doctor doc;
+    if doc.date.valid() {
+        doc.appointment.append(date);
+        appointmentRequests.append();
+    }
+    else return false
+}
+
+
+==========================================================================================
+
+Class: Doctor
+Data: discipline, availableTimeSlot, appointment
+confirmAppointment(appointmentID) {
+    doc.availableTimeSlot.remove(date);
+    Provider.appointmentRequests.remove(appointmentID);
+    Provider.appointmentConfirmed.append(appointmentID);
+}
+denyAppointment(appointmentID) {
+    Provider.appointmentRequests.remove(appointmentID);
+}
+
+valid(date) {
+    if date in availableTimeSlot return true;
+    else return false;
+}
+
+
+==========================================================================================
+
+Class: User
+Data: userID, Name, DOB, planID, appointment
+Behavior:
+searchDoctor(discipline, date) {
+    Provider.searchDoctor(discipline, date);
+}
+makeAppointment(doctorID) {
+    Provider.makeAppointment(doctorID);
+}
