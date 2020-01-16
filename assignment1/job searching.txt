@@ -17,6 +17,7 @@ search(keyword) {
 ==========================================================================================
 Class: Platform
 Data: jobPostings
+Behavior:
 search(keyword) {
     for posting in jobPostings:
         if jobDescription contains keyword{

@@ -1,0 +1,53 @@
+ user
+ platform
+ pizzaShop
+
+ 
+
+==========================================================================================
+Class: User
+Data: Name, email, number, address, paymentMethod, userID
+Behavior:
+searchNearestShop() {
+    Platform.searchNearestShop(address);
+}
+order(specifications) {
+    totalPrice = Platform.getPrice(specifications);
+    pay(order.totalPrice);
+    Platform.order(specifications, shopID);
+}
+==========================================================================================
+Class: Platform
+Data: orders, shops, completedOrders
+Behavior:
+order(specifications, shopID) {
+    PizzaOrder newOrder(specifications);
+    PizzaShop shop = shops.get(shopID);
+    shop.orderReceived.append(newOrder)
+    orders.append(newOrder);
+}
+
+searchNearestShop(address) {
+    return GeographicServices.getNearestShop(address);
+}
+
+updateOrderStatus(orderID) {
+    orders.get(orderID).orderStatus = PizzaShop.updateOrderStatus();
+}
+
+getPrice(specifications) {
+    return calculatePrice(specifications);
+}
+
+==========================================================================================
+Class: PizzaShop
+Data: shopName, address, orderReceived, shopID
+Behavior:
+updateOrderStatus(order) {
+    return newStatus;
+}
+
+
+==========================================================================================
+Class: PizzaOrder
+Data: size, toppings, orderID, shopID, userID, orderStatus, totalPrice
