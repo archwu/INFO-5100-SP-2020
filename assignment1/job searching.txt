@@ -1,0 +1,41 @@
+Platform
+users
+
+
+users search job postings
+Platform collects and shows job postings
+
+
+==========================================================================================
+Class: User
+Data: Name, email, number
+Behavior:
+search(keyword) {
+    Platform.search(keyword);
+}
+
+==========================================================================================
+Class: Platform
+Data: jobPostings
+search(keyword) {
+    for posting in jobPostings:
+        if jobDescription contains keyword{
+            print(posting);
+        }
+}
+
+web_crawler(URL) {
+    newPost = craw(URL).process();
+    jobPostings.append();
+}
+
+cleanUpOutdatedPosting() {
+    for posting in jobPostings:
+        if postTime > 6mo {
+            jobPostings.remove(posting);
+        }
+}
+
+==========================================================================================
+Class: JobPosting
+Data: companyName, title, postTime, jobDescription
