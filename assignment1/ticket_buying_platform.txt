@@ -1,0 +1,72 @@
+event 
+customer
+organizer
+platform
+
+==========================================================================================
+customer buys ticket from platform
+event created by event organizer
+event has venue and date/time
+
+==========================================================================================
+
+Class: Event 
+Data: eventID, date, time, address, venueName, title, seats, tiersOfTicket, numOfTicket, ticketPrice, tagOfEvent, bought
+Behaviour:
+getTicket(eventID, tiersOfTicket) {
+    if bought or numOfTicket == 0 return false;
+    else return true;
+}
+
+==========================================================================================
+
+Class: Customer
+Data: customerID, firstName, lastName, paymentMethod, phone, emailAddress
+Behaviour:
+buyTicket(eventID, ticketID) {
+    Platform.buyTicket(eventID, tiersOfTicket, customerID);
+}
+
+searchEvent(keyword) {
+    Platform.searchEvent(keyword);
+}
+
+viewTicket(eventID) {
+    Platform.viewTicket(eventID);
+}
+
+==========================================================================================
+
+Class: Organizer
+Data: orgID, orgName
+Behaviour:
+addEvent() {
+    Platform.addEvent();
+}
+
+
+==========================================================================================
+Class: Platform
+Data: events, customers, organizers
+Behaviour:
+addEvent(title, date, time, address, venueName, seats, tiersOfTicket, ticketPrice, tagOfEvent) {
+    int eventID;
+    Event newEvent = new Event(eventID, title, date, time, address, venueName, seats, tiersOfTicket, numOfTicket, ticketPrice, tagOfEvent);
+    events.add(newEvent);
+}
+
+searchEvent(keyword) {
+    for each event in events:
+        print event containing keyword
+}
+
+buyTicket(eventID, tiersOfTicket) {
+    ticket = Event.getTicket(eventID, tiersOfTicket);
+    Customer.pay(paymentMethod, ticket.ticketPrice);
+    ticket.bought = true;
+}
+
+viewTicket(eventID) {
+    for ticket in tiersOfTicket && ticket.numOfTicket > 0:
+        System.out.println(ticket);
+}
