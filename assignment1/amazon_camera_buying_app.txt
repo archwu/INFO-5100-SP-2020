@@ -1,0 +1,103 @@
+User can 
+1. Login
+2. Search for cameras in department
+3. Add the favored cameras in the shopping cart
+4. Checkout with different payment methods
+5. Order infomation and tracking
+
+==========================================================================================
+Class: User
+Data: name, id, savedPaymentMethod, addresses, password, cartID, balance
+Behaviour:
+login() {
+    Amazon.login(id, password);
+}
+search() {
+    Amazon.store.search(itemName);
+}
+addToCart() {
+    Cart.add(itemName);
+}
+viewCart() {
+    Cart.viewCart();
+}
+checkOut() {
+    Cart.checkOut();
+}
+addBalance(amount) {
+    if verify(savedPaymentMethod){
+        self.balance.add(amount);
+    }
+}
+checkBalance() {
+    return self.balance;
+}
+==========================================================================================
+Class:  Amazon
+Data: List<Item> store;
+Behaviour:
+login(id, password) {
+    HashMap<Integer, String> customers;
+    if(customers[id] == password) return True;
+    else return False;
+}
+search(itemName) {
+    return store.someWiseSearchAlgorithm(itemName);
+}
+getName(itemID) {
+    if Amazon.store.exist(itemID) return Amazon.store.getItem(itemID).itemName;
+    else return null;
+}
+getURL(itemID) {
+    if Amazon.store.exist(itemID) return Amazon.store.getItem(itemID).itemURL;
+    else return null;
+}
+==========================================================================================
+Class: Cart
+Data: goodsInCart, cartID
+Behaviour:
+addToCart(itemName) {
+    ArrayList<Item> goodsInCart;
+    goodsInCart.append(store.find(itemID));
+}
+viewCart() {
+    return getCartURL(cartID);
+}
+removeItem(itemID) {
+    goodsInCart.remove(findItem(itemID));
+}
+findItem(itemID) {
+    if itemID == goodsInCart.item.itemID: return item
+}
+checkOut() {
+    foreach item in goodsInCart {
+        if User.checkBalance >= item.price {
+            User.deductBalance(item.price);
+        } else {
+            User.addBalance(item.price);
+            User.deductBalance(item.price);
+            Order.add(itemID);
+        }
+    }   
+}
+==========================================================================================
+Class: Item
+Data: itemName, itemID, descriptionURL, price
+Behaviour: 
+
+changePrice(newPrice) {
+    self.price = newPrice;
+}
+
+==========================================================================================
+Class: Order
+Data: orderID, trackingInfo, items
+
+getTrackingInfo() {
+    return trackingInfo;
+}
+Order {
+    int orderID;
+    TrInfo trackingInfo;
+    List<Item> items;
+}
