@@ -25,7 +25,11 @@ makeAppointment(doctorID, date) {
     }
     else return false
 }
-
+login(id, password) {
+    HashMap<Integer, String> customers;
+    if(customers[id] == password) return True;
+    else return False;
+}
 
 ==========================================================================================
 
@@ -51,6 +55,9 @@ valid(date) {
 Class: User
 Data: userID, Name, DOB, planID, appointment
 Behavior:
+login() {
+    Provider.login(id, password);
+}
 searchDoctor(discipline, date) {
     Provider.searchDoctor(discipline, date);
 }

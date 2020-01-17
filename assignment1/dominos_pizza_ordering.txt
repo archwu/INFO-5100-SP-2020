@@ -16,6 +16,11 @@ order(specifications) {
     pay(order.totalPrice);
     Platform.order(specifications, shopID);
 }
+
+login() {
+    Platform.login(id, password);
+}
+
 ==========================================================================================
 Class: Platform
 Data: orders, shops, completedOrders
@@ -37,6 +42,12 @@ updateOrderStatus(orderID) {
 
 getPrice(specifications) {
     return calculatePrice(specifications);
+}
+
+login(id, password) {
+    HashMap<Integer, String> customers;
+    if(customers[id] == password) return True;
+    else return False;
 }
 
 ==========================================================================================

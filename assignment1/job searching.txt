@@ -14,6 +14,11 @@ search(keyword) {
     Platform.search(keyword);
 }
 
+
+login() {
+    Platform.login(id, password);
+}
+
 ==========================================================================================
 Class: Platform
 Data: jobPostings
@@ -37,6 +42,11 @@ cleanUpOutdatedPosting() {
         }
 }
 
+login(id, password) {
+    HashMap<Integer, String> customers;
+    if(customers[id] == password) return True;
+    else return False;
+}
 ==========================================================================================
 Class: JobPosting
 Data: companyName, title, postTime, jobDescription

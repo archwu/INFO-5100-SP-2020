@@ -35,6 +35,10 @@ viewTicket(eventID) {
     Platform.viewTicket(eventID);
 }
 
+login() {
+    Platform.login(id, password);
+}
+
 ==========================================================================================
 
 Class: Organizer
@@ -69,4 +73,10 @@ buyTicket(eventID, tiersOfTicket) {
 viewTicket(eventID) {
     for ticket in tiersOfTicket && ticket.numOfTicket > 0:
         System.out.println(ticket);
+}
+
+login(id, password) {
+    HashMap<Integer, String> customers;
+    if(customers[id] == password) return True;
+    else return False;
 }
