@@ -2,24 +2,29 @@ public class Assignment2func {
     // The class including assignment 2 methods
     public static void main(String[] args) {
         //System.out.println(addDigits(Integer.valueOf(args[0])));
-
+        //findMinMax(new int[]{1, 2, 3, 4, 5, 6, 7});
+        //charCounter("Arch is a student", 's');
+        //charCounter("Arch is a student", 'z');
+        //charCounter("Arch is a student", 'A');
+        //charCounter("Arch is a student", 'a');
     }
 
-    public int charCounter(String input, char theChar) {
+    public static int charCounter(String input, char theChar) {
         /*
             find how many selected characters are in the String
          */
-        char [] convert = input.toCharArray();
+        char[] convert = input.toCharArray();
         int count = 0;
         for (char a : convert) {
             if (a == theChar) {
-                count ++;
+                count++;
             }
         }
+        System.out.println(count);
         return count;
     }
 
-    public void findMinMax(int[] input) {
+    public static void findMinMax(int[] input) {
         /*
             find the maximum and minimum number in an array of numbers
          */
