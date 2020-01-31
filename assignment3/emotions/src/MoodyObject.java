@@ -7,6 +7,5 @@ abstract class MoodyObject {
 
     protected abstract String getMood();
 
-
     protected abstract void expressFeelings();
 }
