@@ -1,7 +1,6 @@
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.List;
-import java.util.Locale;
+
 
 public class Checkout {
     private final static float TAX_RATE = 0.02f;
@@ -39,9 +38,11 @@ public class Checkout {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(DessertShoppe.header);
-        for(DessertItem d : items) {
+        for (DessertItem d : items) {
             sb.append(d.getString());
         }
+        sb.append(String.format("\n%-30s %4s\n", "Tax",DessertShoppe.cents2dollarsAndCents(totalTax())));
+        sb.append(String.format("%-30s %5s\n", "Total Cost", DessertShoppe.cents2dollarsAndCents(totalCost())));
         return sb.toString();
     }
 }

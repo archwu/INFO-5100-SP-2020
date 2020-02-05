@@ -1,7 +1,7 @@
 public class Cookie extends DessertItem {
+    static final int DOZEN = 12;
     int number;
     int pricePerDozen;
-    static final int DOZEN = 12;
 
     public Cookie(String name, int number, int pricePerDozen) {
         super(name);
@@ -11,11 +11,12 @@ public class Cookie extends DessertItem {
 
     @Override
     public int getCost() {
-        return Math.round((float)(number / DOZEN) * pricePerDozen);
+        return Math.round(((float) number / (float) DOZEN) * pricePerDozen);
     }
 
     //TODO
     public String getString() {
-        return String.format("%-30s%5s\n", name, DessertShoppe.cents2dollarsAndCents(getCost()));
+        return String.format("%d @ %s /dz.\n", number, DessertShoppe.cents2dollarsAndCents(pricePerDozen))
+                + String.format("%-30s%5s\n", name, DessertShoppe.cents2dollarsAndCents(getCost()));
     }
 }

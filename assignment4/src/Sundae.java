@@ -16,6 +16,6 @@ public class Sundae extends IceCream {
 
     //TODO
     public String getString() {
-        return String.format("%-30s", toppingName) + "\n" +String.format("%-30s%5s\n", name, DessertShoppe.cents2dollarsAndCents(getCost()));
+        return String.format("%-30s\n", toppingName + " with") + String.format("%-30s%5s\n", name, DessertShoppe.cents2dollarsAndCents(getCost()));
     }
 }
