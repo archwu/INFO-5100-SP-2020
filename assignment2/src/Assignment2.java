@@ -10,8 +10,7 @@ public class Assignment2 {
      */
     public double socialSecurityTax(Employee employee) {
         //write your code here
-        double tax = employee.salary <= 8900 ? employee.salary * 0.062 * 12 : 106800 * 0.062;
-        return tax;
+        return employee.salary <= 8900 ? employee.salary * 0.062 * 12 : 106800 * 0.062;
     }
 
     /**
@@ -27,9 +26,9 @@ public class Assignment2 {
         int salary = employee.salary;
         if (age < 35) {
             insurance = salary * 0.03;
-        } else if (age <= 50 && age >= 35) {
+        } else if (age <= 50) {
             insurance = salary * 0.04;
-        } else if (age > 50 && age < 60) {
+        } else if (age < 60) {
             insurance = salary * 0.05;
         } else {
             insurance = salary * 0.06;
