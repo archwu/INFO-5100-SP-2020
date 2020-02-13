@@ -5,7 +5,7 @@ public class Question3 {
   move all 0's to the end while maintaining the relative orders of other non-zero numbers in a int array
    */
   public static void main(String[] args) {
-    int[] a = moveZeroes(new int[]{1, 2, 3, 0, 2, 1, 3, 0});
+    int[] a = moveZeroes(new int[]{0, 1, 0});
     System.out.println(Arrays.toString(a));
   }
 

@@ -7,7 +7,7 @@ public class Question1 {
     If it doesn't exist, return -1
    */
   public static void main(String[] args) {
-    System.out.println(findFirstNotRepeatingChar("aabcc"));
+    System.out.println(findFirstNotRepeatingChar("aabccbd"));
   }
 
   public static int findFirstNotRepeatingChar(String input) {
