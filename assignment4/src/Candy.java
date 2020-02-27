@@ -10,7 +10,7 @@ public class Candy extends DessertItem{
 
     @Override
     public int getCost() {
-        return Math.round((long) (weight * pricePerPound));
+        return (int)Math.round(weight*1000*pricePerPound)/1000;
     }
 
     //TODO
