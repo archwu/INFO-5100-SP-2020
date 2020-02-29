@@ -1,20 +1,21 @@
-public class Cat extends Pet implements Boardable {
-  String hairLength;
+public class Dog extends Pet implements Boardable {
+
+  String size;
   int year;
   int month;
   int day;
-  public Cat(String name, String ownerName, String color, String hairLength) {
+
+  public Dog(String name, String ownerName, String color) {
     super(name, ownerName, color);
-    this.hairLength = hairLength;
   }
-  String getHairLength(){
-    return hairLength;
+  String getSize(){
+    return size;
   }
 
   @Override
   public String toString() {
     String tmp = super.toString();
-    return "CAT:\n" + tmp + "\nHair: " + getHairLength();
+    return "DOG:\n" + tmp + "\nHair: " + getSize();
   }
 
   @Override
