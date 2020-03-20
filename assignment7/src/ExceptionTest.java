@@ -5,17 +5,17 @@ public class ExceptionTest {
   public static void execute(int[] a) {
     System.out.println("executing...");
     try{
-      a[5] = 0;
+      a[4] = 0;
     } catch (IndexOutOfBoundsException e){
-      throw new MyIndexOutOfBoundException("Index outta bound, lowest is " + Math.min(a.length - 1, 0) + ", highest is " + (a.length - 1), e);
+      throw new MyIndexOutOfBoundException("Index outta bound："+ e.getMessage() +", lowest is " + Math.min(a.length - 1, 0) + ", highest is " + (a.length - 1));
     }
   }
 
   public static void executw2(List<Integer> a) {
     try{
-      a.get(10);
+      int b = a.get(10);
     } catch (IndexOutOfBoundsException e) {
-      throw new MyIndexOutOfBoundException("Index outta bound, lowest is " + Math.min(a.size() - 1, 0) + ", highest is " + (a.size() - 1), e);
+      throw new MyIndexOutOfBoundException("Index outta bound："+ e.getMessage() +", lowest is " + Math.min(a.size() - 1, 0) + ", highest is " + (a.size() - 1));
     }
   }
 
