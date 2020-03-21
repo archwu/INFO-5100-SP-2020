@@ -40,9 +40,7 @@ public class Cat extends Pet implements Boardable {
   public boolean boarding(int month, int day, int year) {
     if (year >= yearStart && year <= yearEnd) {
       if (month >= monthStart && month <= monthEnd) {
-        if (day >= dayStart && day <= dayEnd) {
-          return true;
-        }
+        return day >= dayStart && day <= dayEnd;
       }
     }
     return false;
