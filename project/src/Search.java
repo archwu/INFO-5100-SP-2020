@@ -25,6 +25,7 @@ class SearchDealer implements SearchFactory {
   public Sorter produceSorter() {
     return new DealerSorter();
   }
+  
 }
 
 class SearchVehicle implements SearchFactory {
@@ -64,6 +65,11 @@ class SearchIncentive implements SearchFactory {
 }
 
 public class Search {
+  /*
+  This class is the API we provide to all the GUIs. The GUI should instantiate a Search instance with their input of
+  GUI and their identifier(Vehicle, Dealer or Incentive). Afterwards the GUI only need to call the doSearch() method
+  then our algorithms will return sorted data for GUI to display
+   */
   SearchFactory factory;
   String[] input;
 

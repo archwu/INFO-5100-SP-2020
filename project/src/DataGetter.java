@@ -1,6 +1,5 @@
 public interface DataGetter {
   void get();
-  //call API
 }
 
 class IncentiveGetter implements DataGetter{
