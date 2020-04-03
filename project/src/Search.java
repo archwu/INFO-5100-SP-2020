@@ -75,7 +75,17 @@ public class Search {
 
 
   public Search(SearchCriterion sc){
-
+    input = sc.optionalSearchFilters;
+    String signature = sc.signature;
+    if (signature.equals("Vehicle")) {
+      factory = new SearchVehicle();
+    } else if (signature.equals("Dealer")) {
+      factory = new SearchDealer();
+    } else if (signature.equals("Incentive")) {
+      factory = new SearchIncentive();
+    } else {
+      throw new NoSuchElementException();
+    }
   }
   public Search(String[] optionalFilters, String signature) {
     input = optionalFilters;
