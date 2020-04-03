@@ -91,7 +91,7 @@ public class Search {
     Parser curParser = this.factory.produceParser();
     Sorter curSorter = this.factory.produceSorter();
     curParser.parse(this.input);
-    curGetter.get();
-    return curSorter.sort();
+    List<?extends BigDataType> data = curGetter.get();
+    return curSorter.sort(data);
   }
 }
