@@ -1,5 +1,4 @@
 import java.util.Collection;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 interface SearchFactory {
@@ -74,14 +73,18 @@ public class Search {
   SearchFactory factory;
   String[] input;
 
-  public Search(String[] a, String b) {
-    input = a;
-    if (b.equals("Vehicle")) {
-      factory = (SearchFactory) new SearchVehicle();
-    } else if (b.equals("Dealer")) {
-      factory = (SearchFactory) new SearchDealer();
-    } else if (b.equals("Incentive")) {
-      factory = (SearchFactory) new SearchIncentive();
+
+  public Search(SearchCriterion sc){
+
+  }
+  public Search(String[] optionalFilters, String signature) {
+    input = optionalFilters;
+    if (signature.equals("Vehicle")) {
+      factory = new SearchVehicle();
+    } else if (signature.equals("Dealer")) {
+      factory = new SearchDealer();
+    } else if (signature.equals("Incentive")) {
+      factory = new SearchIncentive();
     } else {
       throw new NoSuchElementException();
     }
