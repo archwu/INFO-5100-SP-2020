@@ -1,14 +1,13 @@
-import java.util.List;
+import java.util.Collection;
 
 public interface Sorter {
-  public List<? extends BigDataType> sort(List<? extends BigDataType> in);
+  Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in);
 }
 
 class DealerSorter implements Sorter {
 
-
   @Override
-  public List<? extends BigDataType> sort(List<? extends BigDataType> in) {
+  public Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in) {
     return null;
   }
 }
@@ -17,16 +16,14 @@ class VehicleSorter implements Sorter {
 
 
   @Override
-  public List<? extends BigDataType> sort(List<? extends BigDataType> in) {
+  public Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in) {
     return null;
   }
 }
 
 class IncentiveSorter implements Sorter {
-
-
   @Override
-  public List<? extends BigDataType> sort(List<? extends BigDataType> in) {
+  public Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in) {
     return null;
   }
 }

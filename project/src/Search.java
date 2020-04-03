@@ -1,12 +1,13 @@
+import java.util.Collection;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 interface SearchFactory {
-  public Parser produceParser();
+  Parser produceParser();
 
-  public DataGetter produceDataGetter();
+  DataGetter produceDataGetter();
 
-  public Sorter produceSorter();
+  Sorter produceSorter();
 }
 
 class SearchDealer implements SearchFactory {
@@ -86,12 +87,12 @@ public class Search {
     }
   }
 
-  public List<? extends BigDataType> doSearch() {
+  public Collection<? extends BigDataType> doSearch() {
     DataGetter curGetter = this.factory.produceDataGetter();
     Parser curParser = this.factory.produceParser();
     Sorter curSorter = this.factory.produceSorter();
     curParser.parse(this.input);
-    List<?extends BigDataType> data = curGetter.get();
+    Collection<?extends BigDataType> data = curGetter.get();
     return curSorter.sort(data);
   }
 }

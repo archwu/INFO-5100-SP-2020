@@ -1,13 +1,13 @@
-import java.util.List;
+import java.util.Collection;
 
 public interface DataGetter {
-  List<? extends BigDataType> get();
+  Collection<? extends BigDataType> get();
 }
 
 class IncentiveGetter implements DataGetter{
 
   @Override
-  public List<? extends BigDataType> get() {
+  public Collection<? extends BigDataType> get() {
 
     return null;
   }
@@ -16,7 +16,7 @@ class IncentiveGetter implements DataGetter{
 class VehicleGetter implements DataGetter{
 
   @Override
-  public List<? extends BigDataType> get() {
+  public Collection<? extends BigDataType> get() {
 
     return null;
   }
@@ -25,7 +25,7 @@ class VehicleGetter implements DataGetter{
 class DealerGetter implements DataGetter{
 
   @Override
-  public List<? extends BigDataType> get() {
+  public Collection<? extends BigDataType> get() {
 
     return null;
   }
