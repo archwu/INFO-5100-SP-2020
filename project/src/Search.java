@@ -25,7 +25,7 @@ class SearchDealer implements SearchFactory {
   public Sorter produceSorter() {
     return new DealerSorter();
   }
-  
+
 }
 
 class SearchVehicle implements SearchFactory {
@@ -86,7 +86,7 @@ public class Search {
     }
   }
 
-  public List<BigDataType> doSearch() {
+  public List<? extends BigDataType> doSearch() {
     DataGetter curGetter = this.factory.produceDataGetter();
     Parser curParser = this.factory.produceParser();
     Sorter curSorter = this.factory.produceSorter();
