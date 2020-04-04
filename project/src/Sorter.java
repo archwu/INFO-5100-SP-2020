@@ -8,7 +8,7 @@ class DealerSorter implements Sorter {
 
   @Override
   public Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in) {
-    return null;
+    return in;
   }
 }
 
@@ -17,13 +17,13 @@ class VehicleSorter implements Sorter {
 
   @Override
   public Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in) {
-    return null;
+    return in;
   }
 }
 
 class IncentiveSorter implements Sorter {
   @Override
   public Collection<? extends BigDataType> sort(Collection<? extends BigDataType> in) {
-    return null;
+    return in;
   }
 }

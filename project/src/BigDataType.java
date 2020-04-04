@@ -1,5 +1,5 @@
 public class BigDataType {
-
+// Mock implementation of the data structure we are using
 }
 
 class Vehicle extends BigDataType {
